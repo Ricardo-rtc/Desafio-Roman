@@ -8,7 +8,6 @@ CREATE TABLE TipoUsuario(
 	idTipoUsuario int IDENTITY PRIMARY KEY,
 	nomeTipoUsuario VARCHAR(200) NOT NULL 
 )
-
 GO
 
 CREATE TABLE Usuario(
@@ -30,7 +29,6 @@ CREATE TABLE Professor(
 	idUsuario int FOREIGN KEY REFERENCES Usuario (idUsuario),
 	idEquipe int FOREIGN KEY REFERENCES Equipe (idEquipe),
 	nomeProfessor VARCHAR(200) NOT NULL
-	
 )
 GO
 
@@ -43,7 +41,8 @@ GO
 CREATE TABLE Projeto(
 	idProjeto int IDENTITY PRIMARY KEY,
 	nomeProjeto VARCHAR(200) NOT NULL,
+	escopo VARCHAR(2000),
 	idTema int FOREIGN KEY REFERENCES Tema (idTema),
+	idProfessor int FOREIGN KEY REFERENCES Professor (idProfessor) NOT NULL
 )
 GO
-

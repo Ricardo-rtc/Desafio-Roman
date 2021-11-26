@@ -16,8 +16,8 @@ VALUES						('Desenvolvimento'),
 go
 
 INSERT INTO Professor		(idUsuario, idEquipe, nomeProfessor)
-VALUES						(1,1,'Saulo'),
-							(1,1,'Lucas')
+VALUES						(1, 1, 'Saulo'),
+							(2, 1, 'Lucas')
 go
 
 INSERT INTO Tema			(nomeTema)
@@ -25,8 +25,8 @@ VALUES						('HQ'),
 							('Gestão')
 go
 
-INSERT INTO Projeto			(idTema, nomeProjeto)
-VALUES						(1,'Vilões'),
-							(2,'Controle de presença')
+INSERT INTO Projeto			(idTema, nomeProjeto, idProfessor)
+VALUES						(1,'Vilões', 1),
+							(2,'Controle de presença', 2)
 go
 
