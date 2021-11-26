@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>desafio_roman_webApi</name>
+    </assembly>
+    <members>
+        <member name="M:desafio_roman_webApi.Controllers.LoginController.Login(desafio_roman_webApi.ViewModels.LoginViewModel)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:desafio_roman_webApi.Interfaces.IProjetoRepository.Listar">
+            <summary>
+            Lista todos os projetos
+            </summary>
+            <returns>Uma lista de projetos</returns>
+        </member>
+        <member name="M:desafio_roman_webApi.Interfaces.IProjetoRepository.Cadastrar(desafio_roman_webApi.Domains.Projeto)">
+            <summary>
+            Cadastra o objeto criado
+            </summary>
+            <param name="objCadastrado">Objeto cadastrado</param>
+        </member>
+        <member name="M:desafio_roman_webApi.Interfaces.IUsuarioRepository.Logar(System.String,System.String)">
+            <summary>
+            Verifica a identificação do usuário
+            </summary>
+            <param name="email">Email</param>
+            <param name="senha">Senha</param>
+            <returns>Objeto do usuário logado</returns>
+        </member>
+    </members>
+</doc>

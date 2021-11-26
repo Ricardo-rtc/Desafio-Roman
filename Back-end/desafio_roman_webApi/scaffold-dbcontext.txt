@@ -1,0 +1,1 @@
+Scaffold-DbContext "Data Source=NOTE0113A5\SQLEXPRESS; Initial Catalog=ROMAN; user id=sa; pwd=Senai@132" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context DesafioRomanContext

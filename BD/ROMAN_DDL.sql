@@ -45,4 +45,3 @@ CREATE TABLE Projeto(
 	idTema int FOREIGN KEY REFERENCES Tema (idTema),
 	idProfessor int FOREIGN KEY REFERENCES Professor (idProfessor) NOT NULL
 )
-GO
