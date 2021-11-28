@@ -30,7 +30,7 @@ namespace desafio_roman_webApi.Contexts
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113A5\\SQLEXPRESS; Initial Catalog=ROMAN; user id=sa; pwd=Senai@132");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-C8POL51\\SQLEXPRESS; initial catalog=ROMAN; user Id=sa; pwd=senai@132;");
             }
         }
 
@@ -41,7 +41,7 @@ namespace desafio_roman_webApi.Contexts
             modelBuilder.Entity<Equipe>(entity =>
             {
                 entity.HasKey(e => e.IdEquipe)
-                    .HasName("PK__Equipe__981ACF459788B7E0");
+                    .HasName("PK__Equipe__981ACF4566F13DF0");
 
                 entity.ToTable("Equipe");
 
@@ -57,7 +57,7 @@ namespace desafio_roman_webApi.Contexts
             modelBuilder.Entity<Professor>(entity =>
             {
                 entity.HasKey(e => e.IdProfessor)
-                    .HasName("PK__Professo__4E7C3C6DE76977C6");
+                    .HasName("PK__Professo__4E7C3C6DCDA03AE1");
 
                 entity.ToTable("Professor");
 
@@ -87,11 +87,16 @@ namespace desafio_roman_webApi.Contexts
             modelBuilder.Entity<Projeto>(entity =>
             {
                 entity.HasKey(e => e.IdProjeto)
-                    .HasName("PK__Projeto__8FCCED76B161EB5B");
+                    .HasName("PK__Projeto__8FCCED76D8BCEC48");
 
                 entity.ToTable("Projeto");
 
                 entity.Property(e => e.IdProjeto).HasColumnName("idProjeto");
+
+                entity.Property(e => e.Escopo)
+                    .HasMaxLength(2000)
+                    .IsUnicode(false)
+                    .HasColumnName("escopo");
 
                 entity.Property(e => e.IdProfessor).HasColumnName("idProfessor");
 
@@ -107,18 +112,18 @@ namespace desafio_roman_webApi.Contexts
                     .WithMany(p => p.Projetos)
                     .HasForeignKey(d => d.IdProfessor)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK__Projeto__idProfe__32E0915F");
+                    .HasConstraintName("FK__Projeto__idProfe__36B12243");
 
                 entity.HasOne(d => d.IdTemaNavigation)
                     .WithMany(p => p.Projetos)
                     .HasForeignKey(d => d.IdTema)
-                    .HasConstraintName("FK__Projeto__idTema__31EC6D26");
+                    .HasConstraintName("FK__Projeto__idTema__35BCFE0A");
             });
 
             modelBuilder.Entity<Tema>(entity =>
             {
                 entity.HasKey(e => e.IdTema)
-                    .HasName("PK__Tema__BCD9EB48C74FAF84");
+                    .HasName("PK__Tema__BCD9EB48B06FF957");
 
                 entity.ToTable("Tema");
 
@@ -134,7 +139,7 @@ namespace desafio_roman_webApi.Contexts
             modelBuilder.Entity<TipoUsuario>(entity =>
             {
                 entity.HasKey(e => e.IdTipoUsuario)
-                    .HasName("PK__TipoUsua__03006BFF9B7EA894");
+                    .HasName("PK__TipoUsua__03006BFF4B399165");
 
                 entity.ToTable("TipoUsuario");
 
@@ -150,11 +155,11 @@ namespace desafio_roman_webApi.Contexts
             modelBuilder.Entity<Usuario>(entity =>
             {
                 entity.HasKey(e => e.IdUsuario)
-                    .HasName("PK__Usuario__645723A60524AC7D");
+                    .HasName("PK__Usuario__645723A64BEA0C77");
 
                 entity.ToTable("Usuario");
 
-                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E61648B51FAE9")
+                entity.HasIndex(e => e.Email, "UQ__Usuario__AB6E616462B462F1")
                     .IsUnique();
 
                 entity.Property(e => e.IdUsuario).HasColumnName("idUsuario");

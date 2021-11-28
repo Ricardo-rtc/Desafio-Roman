@@ -6,7 +6,7 @@
     <members>
         <member name="M:desafio_roman_webApi.Controllers.LoginController.Login(desafio_roman_webApi.ViewModels.LoginViewModel)">
             <summary>
-            Busca objeto atráves do ID
+            Método responsável por fazer o login na api
             </summary>
             <returns>Lista apenas o objeto selecionado</returns>
         </member>

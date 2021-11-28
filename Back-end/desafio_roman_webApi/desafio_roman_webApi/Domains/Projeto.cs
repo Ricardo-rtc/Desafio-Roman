@@ -9,6 +9,7 @@ namespace desafio_roman_webApi.Domains
     {
         public int IdProjeto { get; set; }
         public string NomeProjeto { get; set; }
+        public string Escopo { get; set; }
         public int? IdTema { get; set; }
         public int IdProfessor { get; set; }
 

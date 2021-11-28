@@ -26,7 +26,7 @@ namespace desafio_roman_webApi.Controllers
         }
 
         /// <summary>
-        /// Busca objeto atráves do ID
+        /// Método responsável por fazer o login na api
         /// </summary>
         /// <returns>Lista apenas o objeto selecionado</returns>
         [HttpPost()]

@@ -1,55 +1,25 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import {Picker} from '@react-native-picker/picker';
 import {
+  Image,
+  StatusBar,
+  TouchableOpacity,
+  ImageBackground,
   StyleSheet,
   Text,
-  TouchableOpacity,
-  View,
-  Image,
-  ImageBackground,
   TextInput,
+  View,
 } from 'react-native';
 
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import api from '../services/api';
+// const bottomTab = createBottomTabNavigator();
 
-export default class Login extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      email: 'prof1@gmail.com',
-      senha: 'senai@132',
-    };
-  }
-  //como vamos trabalhar com assync historage,
-  //nossa funcao tem que ser async.
-  realizarLogin = async () => {
-    //nao temos mais  console log.
-    //vamos utilizar console.warn.
 
-    //apenas para teste.
-    console.warn(this.state.email + ' ' + this.state.senha);
 
-    const resposta = await api.post('/login', {
-      email: this.state.email, //ADM@ADM.COM
-      senha: this.state.senha, //senha123
-    });
+class Main extends Component {
 
-    //mostrar no swagger para montar.
-    const token = resposta.data.token;
-    await AsyncStorage.setItem('userToken', token);
-
-    //agora sim podemos descomentar.
-    if (resposta.status == 200) {
-      this.props.navigation.navigate('Main');
-    }
-
-    console.warn(token);
-
-    //
-  };
-
-  render() {
+  render(){
     return (
       <View style={styles.overlay}>
       <ImageBackground
@@ -58,20 +28,19 @@ export default class Login extends Component {
         {/* retangulo roxo */}
         <View style={styles.main}>
           <Image
-          source={require('../../assets/img/logo-full.png')}
+          source={require('../../assets/img/logo.png')}
           style={styles.mainImgLogin}
           />
           
 
-          <TextInput
-            style={styles.inputLogin}
-            placeholder="Email"
-            placeholderTextColor="#FFF"
-            keyboardType="email-address"
-            // ENVENTO PARA FAZERMOS ALGO ENQUANTO O TEXTO MUDA
-            onChangeText={email => this.setState({email})}
-          />
-
+          <Picker
+        // selectedValue={selectedValue}
+        style={styles.Picker}
+        // onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Java" value="java" />
+        <Picker.Item label="JavaScript" value="js" />
+      </Picker>
           <TextInput
             style={styles.inputLogin}
             placeholder="Senha"
@@ -92,13 +61,24 @@ export default class Login extends Component {
       </View>
     );
   }
-}
+  
+};
 
 const styles = StyleSheet.create({
-  //antes da main
+
   overlay: {
     ...StyleSheet.absoluteFillObject, //todas as prop do styleShhet, e vamos aplica o abosluteFIL...
     backgroundColor: 'rgba(68, 7, 147, 1)', //rgba pq vamos trabalhar com transparencia.
+  },
+  Picker:{
+    width:240,
+    fontSize: 18,
+    marginBottom: 40,
+    color: '#FFF',
+    // borderColor: 'rgba(68, 7, 147, 1)', //linha separadora
+    // borderWidth: 2, //espessura.
+    borderRadius: 25,
+    backgroundColor: 'rgba(68, 7, 147, 1)'
   },
 
   // conteúdo da main
@@ -147,3 +127,5 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(68, 7, 147, 1)'
   },
 });
+
+export default Main;

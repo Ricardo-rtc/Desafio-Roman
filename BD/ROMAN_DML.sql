@@ -25,8 +25,8 @@ VALUES						('HQ'),
 							('Gestão')
 go
 
-INSERT INTO Projeto			(idTema, nomeProjeto, idProfessor)
-VALUES						(1,'Vilões', 1),
-							(2,'Controle de presença', 2)
+INSERT INTO Projeto			(idTema, nomeProjeto,escopo, idProfessor)
+VALUES						(1,'Vilões','Projeto sobre vilões de HQ', 1),
+							(2,'Controle de presença','Projeto sobre o controle de presença em gestão de uma empresa', 2)
 go
 
