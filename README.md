@@ -23,7 +23,7 @@
 <!-- SOBRE O PROJETO -->
 ## Sobre o projeto
 <p align="justify">Os professores de uma escola de tecnologia, ao longo do tempo, criam diversas situações-problema com escopos de projetos propostos aos alunos, porém isto se dá de forma individualizada, com pouco compartilhamento e uniformidade entre os colegas de equipe.</p>
-<p align="justify">Portanto, na primeira parte do desenvolvimento do Roman, você deverá desenvolver um sistema de propostas de projetos que serão compartilhados entre os professores. Este é então um projeto de uma plataforma para sugestão de projetos, onde a interface com o usuário é uma <strong>aplicação mobile</strong>!</p>
+<p align="justify">Portanto, Roman é um sistema de propostas de projetos que serão compartilhados entre os professores. Este é o desenvolvimento de uma plataforma para sugestão de projetos, onde a interface com o usuário é uma <strong>aplicação mobile</strong>.</p>
 
 ## Ambientação
 
