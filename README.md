@@ -1,9 +1,7 @@
 <!-- LOGO DO PROJETO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Ricardo-rtc/Desafio-Roman">
-    <img src="Layout/Logo.png" alt="Logo" width="80" height="80">
-  </a>
+  <img src="Layout/Logo-removebg.png" alt="Logo" width="150" height="150">
 
   <h3 align="center">Desafio Roman</h3>
 
