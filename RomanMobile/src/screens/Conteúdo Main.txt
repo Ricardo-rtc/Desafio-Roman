@@ -1,0 +1,38 @@
+<ImageBackground
+      source={require('../../assets/img/background.png')}
+        style={StyleSheet.absoluteFillObject}>
+        {/* retangulo roxo */}
+        <View style={styles.main}>
+          <Image
+          source={require('../../assets/img/logo.png')}
+          style={styles.mainImgLogin}
+          />
+          
+
+          <Picker
+        // selectedValue={selectedValue}
+        style={styles.Picker}
+        // onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+      >
+        <Picker.Item label="Selecione um item" value="java" disabled/>
+        <Picker.Item label="Ser feliz" value="java" />
+        <Picker.Item label="Ser DEV" value="js" />
+      </Picker>
+          <TextInput
+            style={styles.inputLogin}
+            placeholder="Descrição"
+            placeholderTextColor="#FFF"
+            keyboardType="default" //para default nao obrigatorio.
+            secureTextEntry={true} //proteje a senha.
+            // ENVENTO PARA FAZERMOS ALGO ENQUANTO O TEXTO MUDA
+            onChangeText={senha => this.setState({senha})}
+          />
+
+          <TouchableOpacity
+            style={styles.btnLogin}
+            onPress={this.realizarLogin}>
+            <Text style={styles.btnLoginText}>Cadastrar</Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+

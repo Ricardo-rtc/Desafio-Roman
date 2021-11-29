@@ -11,9 +11,9 @@ import {
   View,
 } from 'react-native';
 
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-// const bottomTab = createBottomTabNavigator();
+const bottomTab = createBottomTabNavigator();
 
 
 
@@ -21,43 +21,15 @@ class Main extends Component {
 
   render(){
     return (
-      <View style={styles.overlay}>
-      <ImageBackground
-      source={require('../../assets/img/background.png')}
-        style={StyleSheet.absoluteFillObject}>
-        {/* retangulo roxo */}
-        <View style={styles.main}>
-          <Image
-          source={require('../../assets/img/logo.png')}
-          style={styles.mainImgLogin}
-          />
-          
-
-          <Picker
-        // selectedValue={selectedValue}
-        style={styles.Picker}
-        // onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-      >
-        <Picker.Item label="Java" value="java" />
-        <Picker.Item label="JavaScript" value="js" />
-      </Picker>
-          <TextInput
-            style={styles.inputLogin}
-            placeholder="Senha"
-            placeholderTextColor="#FFF"
-            keyboardType="default" //para default nao obrigatorio.
-            secureTextEntry={true} //proteje a senha.
-            // ENVENTO PARA FAZERMOS ALGO ENQUANTO O TEXTO MUDA
-            onChangeText={senha => this.setState({senha})}
-          />
-
-          <TouchableOpacity
-            style={styles.btnLogin}
-            onPress={this.realizarLogin}>
-            <Text style={styles.btnLoginText}>Entrar</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
+      <View >
+        <Text style={{color:"red", fontSize:22}}>Funciona</Text>
+        
+        {/* <bottomTab.Navigator>
+            <bottomTab.Screen name="Convites"  />
+            <bottomTab.Screen name="Eventos"  />
+            <bottomTab.Screen name="Perfil"  />
+          </bottomTab.Navigator> */}
+      
       </View>
     );
   }
