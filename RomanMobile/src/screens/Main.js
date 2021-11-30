@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Picker} from '@react-native-picker/picker';
 import {
   Image,
   StatusBar,
@@ -13,22 +12,80 @@ import {
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+
 const bottomTab = createBottomTabNavigator();
 
 
+import Cadastrar from '../screens/Cadastrar';
+import Login from '../screens/Login';
 
-class Main extends Component {
+
+
+ class Main extends Component {
 
   render(){
     return (
-      <View >
-        <Text style={{color:"red", fontSize:22}}>Funciona</Text>
+   
+      <View style={styles.main}>
+        <StatusBar 
+          hidden={false}
+        />  
         
-        {/* <bottomTab.Navigator>
-            <bottomTab.Screen name="Convites"  />
-            <bottomTab.Screen name="Eventos"  />
-            <bottomTab.Screen name="Perfil"  />
-          </bottomTab.Navigator> */}
+        <bottomTab.Navigator
+        initialRouteName='Cadastrar'
+
+        // versão 5.x do React Navigation
+        // tabBarOptions={{
+        //   showLabel: false,
+        //   showIcon: true,
+        //   activeBackgroundColor: '#B727FF',
+        //   inactiveBackgroundColor: '#DD99FF',
+        //   activeTintColor: 'red',
+        //   inactiveTintColor: 'blue',
+        //   style: { height: 50 }
+        // }}
+        
+        screenOptions={ ({ route }) => ({
+          tabBarIcon: () => {
+            if (route.name === 'Cadastrar') {
+              return(
+                <Image
+                  source={require('../../assets/img/plane.png')}
+                  style={styles.tabBarIcon}
+                />
+              )
+            }
+            if (route.name === 'Login') {
+              return(
+                <Image
+                  source={require('../../assets/img/calendar.png')}
+                  style={styles.tabBarIcon}
+                />
+              )
+            }
+            // if (route.name === 'Perfil') {
+            //   return(
+            //     <Image
+            //       source={require('../../assets/img/profile.png')}
+            //       style={styles.tabBarIcon}
+            //     />
+            //   )
+            // }
+          },
+
+          // React Navigation 6.x
+          headerShown: false,
+          tabBarShowLabel: false,
+          tabBarActiveBackgroundColor: '#B727FF',
+          tabBarInactiveBackgroundColor: '#DD99FF',
+          // tabBarActiveTintColor: 'blue',
+          // tabBarInactiveTintColor: 'red',
+          tabBarStyle: { height: 50 }              
+        }) }>
+            <bottomTab.Screen name="Cadastrar" component={Cadastrar}  />
+            <bottomTab.Screen name="Login" component={Login}  />
+            
+          </bottomTab.Navigator>
       
       </View>
     );
@@ -38,66 +95,20 @@ class Main extends Component {
 
 const styles = StyleSheet.create({
 
-  overlay: {
-    ...StyleSheet.absoluteFillObject, //todas as prop do styleShhet, e vamos aplica o abosluteFIL...
-    backgroundColor: 'rgba(68, 7, 147, 1)', //rgba pq vamos trabalhar com transparencia.
-  },
-  Picker:{
-    width:240,
-    fontSize: 18,
-    marginBottom: 40,
-    color: '#FFF',
-    // borderColor: 'rgba(68, 7, 147, 1)', //linha separadora
-    // borderWidth: 2, //espessura.
-    borderRadius: 25,
-    backgroundColor: 'rgba(68, 7, 147, 1)'
-  },
-
   // conteúdo da main
   main: {
-    // flex: 1,
-    //backgroundColor: '#F1F1F1', retirar pra nao ter conflito.
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '100%',
-    height: '100%',
+    flex: 1,
+    backgroundColor: '#F1F1F1'
   },
 
-  mainImgLogin: {
-    margin: 60, //espacamento em todos os lados,menos pra cima.
-    marginTop: 0, // tira espacamento pra cima
-  },
+  // estilo dos ícones da tabBar
+  tabBarIcon: {
+    width: 22,
+    height: 22
+  }
 
-  inputLogin: {
-    width: 240, //largura mesma do botao
-    marginBottom: 40, //espacamento pra baixo
-    fontSize: 18,
-    color: '#FFF',
-    borderColor: 'rgba(68, 7, 147, 1)', //linha separadora
-    borderWidth: 2, //espessura.
-    borderRadius: 25,
-    backgroundColor: 'rgba(68, 7, 147, 1)'
-  },
-
-  btnLoginText: {
-    fontSize: 18, //aumentar um pouco
-    fontFamily: 'Open Sans Light', //troca de fonte
-    color: '#fff', //mesma cor identidade
-   // letterSpacing: 6, //espacamento entre as letras
-    textTransform: 'uppercase', //estilo maiusculo
-  },
-  btnLogin: {
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 38,
-    width: 240,
-    // borderWidth: 1,
-    shadowOffset: {height: 1, width: 1},
-    borderColor: 'rgba(68, 7, 147, 1)', //linha separadora
-    borderWidth: 2, //espessura.
-    borderRadius: 25,
-    backgroundColor: 'rgba(68, 7, 147, 1)'
-  },
 });
 
+
 export default Main;
+
