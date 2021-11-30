@@ -36,13 +36,35 @@
    ```sh
    git clone https://github.com/Ricardo-rtc/Desafio-Roman
    ```
-2. Instale os pacotes NPM
+
+2. Execute os scripts da pasta [BD](https://github.com/Ricardo-rtc/Desafio-Roman/tree/main/BD)\
+   ![image](https://user-images.githubusercontent.com/82384571/144037481-dbbd3607-aa7d-4186-9254-e566987a7c2c.png)
+
+   
+3. Altere a linha 34 da [DesafioRomanContext.cs](https://github.com/Ricardo-rtc/Desafio-Roman/blob/main/Back-end/desafio_roman_webApi/desafio_roman_webApi/Contexts/DesafioRomanContext.cs) com as informações do banco de dados gerado anteriormente
+   ```cs
+   optionsBuilder.UseSqlServer("Data Source=Nome do servidor; initial catalog=Nome do catálogo; user Id=Logon de autenticação; pwd=Senha de autenticação;");
+   ```
+   
+4. Altere a linha 22 da [launchSettings.json](https://github.com/Ricardo-rtc/Desafio-Roman/blob/main/Back-end/desafio_roman_webApi/desafio_roman_webApi/Properties/launchSettings.json) com seu respectivo ip
+   ```json
+   "applicationUrl": "http://seu-endereço-ip:5000",
+   ```
+
+5. Abra o prompt de comando e execute a API
+   ```cmd
+   cd Back-end\desafio_roman_webApi\desafio_roman_webApi
+   dotnet run
+   ```
+   
+6. Instale os pacotes NPM da [RomanMobile](https://github.com/Ricardo-rtc/Desafio-Roman/tree/main/RomanMobile)
    ```sh
    npm install
    ```
-<!-- 3. Ajuste o endereço da página `???`
-   ```js
-   const ip = 'SEU IP';
-   ``` -->
+   
+7. Execute a interface mobile [RomanMobile](https://github.com/Ricardo-rtc/Desafio-Roman/tree/main/RomanMobile)
+   ```sh
+   npm react-native run-android
+   ```
     
     
