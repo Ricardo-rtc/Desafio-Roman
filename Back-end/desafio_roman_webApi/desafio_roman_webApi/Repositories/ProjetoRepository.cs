@@ -21,10 +21,7 @@ namespace desafio_roman_webApi.Repositories
 
         public List<Projeto> Listar()
         {
-            return ctx.Projetos.ToList();
-            // .Include(p => p.IdProfessorNavigation)
-            // .Include(p => p.IdTemaNavigation)
-
+            return ctx.Projetos.Include(p => p.IdProfessorNavigation).Include(p => p.IdTemaNavigation).ToList();
         }
     }
 }
