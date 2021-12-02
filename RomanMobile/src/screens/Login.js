@@ -41,7 +41,7 @@ export default class Login extends Component {
 
     //agora sim podemos descomentar.
     if (resposta.status == 200) {
-      this.props.navigation.navigate('Cadastrar');
+      this.props.navigation.navigate('Main');
     }
 
     console.warn(token);

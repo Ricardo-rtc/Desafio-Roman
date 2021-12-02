@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Picker} from '@react-native-picker/picker';
+import { Picker } from '@react-native-picker/picker';
 import {
   Image,
   StatusBar,
@@ -19,49 +19,49 @@ const bottomTab = createBottomTabNavigator();
 
 class Cadastrar extends Component {
 
-  render(){
+  render() {
     return (
       <View style={styles.overlay}>
         <ImageBackground
-      source={require('../../assets/img/background.png')}
-        style={StyleSheet.absoluteFillObject}>
-        <View style={styles.main}>
-          <Image
-          source={require('../../assets/img/logo.png')}
-          style={styles.mainImgLogin}
-          />
-          
+          source={require('../../assets/img/background.png')}
+          style={StyleSheet.absoluteFillObject}>
+          <View style={styles.main}>
+            <Image
+              source={require('../../assets/img/logo.png')}
+              style={styles.mainImgLogin}
+            />
 
-          <Picker
-        // selectedValue={selectedValue}
-        style={styles.Picker}
-        // onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
-      >
-        <Picker.Item label="Selecione um item" value="java" disabled/>
-        <Picker.Item label="Ser feliz" value="java" />
-        <Picker.Item label="Ser DEV" value="js" />
-      </Picker>
-          <TextInput
-            style={styles.inputLogin}
-            placeholder="Descrição"
-            placeholderTextColor="#FFF"
-            keyboardType="default" //para default nao obrigatorio.
-            secureTextEntry={true} //proteje a senha.
-            // ENVENTO PARA FAZERMOS ALGO ENQUANTO O TEXTO MUDA
-            onChangeText={senha => this.setState({senha})}
-          />
 
-          <TouchableOpacity
-            style={styles.btnLogin}
-            onPress={this.realizarLogin}>
-            <Text style={styles.btnLoginText}>Cadastrar</Text>
-          </TouchableOpacity>
-        </View>
-      </ImageBackground>
+            <Picker
+              // selectedValue={selectedValue}
+              style={styles.Picker}
+            // onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+            >
+              <Picker.Item label="Selecione um item" value="java" disabled />
+              <Picker.Item label="Ser feliz" value="java" />
+              <Picker.Item label="Ser DEV" value="js" />
+            </Picker>
+            <TextInput
+              style={styles.inputLogin}
+              placeholder="Descrição"
+              placeholderTextColor="#FFF"
+              keyboardType="default" //para default nao obrigatorio.
+              secureTextEntry={true} //proteje a senha.
+              // ENVENTO PARA FAZERMOS ALGO ENQUANTO O TEXTO MUDA
+              onChangeText={senha => this.setState({ senha })}
+            />
+
+            <TouchableOpacity
+              style={styles.btnLogin}
+              onPress={this.realizarLogin}>
+              <Text style={styles.btnLoginText}>Cadastrar</Text>
+            </TouchableOpacity>
+          </View>
+        </ImageBackground>
       </View>
     );
   }
-  
+
 };
 
 const styles = StyleSheet.create({
@@ -70,8 +70,8 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject, //todas as prop do styleShhet, e vamos aplica o abosluteFIL...
     backgroundColor: 'rgba(68, 7, 147, 1)', //rgba pq vamos trabalhar com transparencia.
   },
-  Picker:{
-    width:240,
+  Picker: {
+    width: 240,
     fontSize: 18,
     marginBottom: 40,
     color: '#FFF',
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: 18, //aumentar um pouco
     fontFamily: 'Open Sans Light', //troca de fonte
     color: '#fff', //mesma cor identidade
-   // letterSpacing: 6, //espacamento entre as letras
+    // letterSpacing: 6, //espacamento entre as letras
     textTransform: 'uppercase', //estilo maiusculo
   },
   btnLogin: {
@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
     height: 38,
     width: 240,
     // borderWidth: 1,
-    shadowOffset: {height: 1, width: 1},
+    shadowOffset: { height: 1, width: 1 },
     borderColor: 'rgba(68, 7, 147, 1)', //linha separadora
     borderWidth: 2, //espessura.
     borderRadius: 25,

@@ -17,7 +17,7 @@ const bottomTab = createBottomTabNavigator();
 
 
 import Cadastrar from '../screens/Cadastrar';
-import Login from '../screens/Login';
+import Listar from '../screens/Listar';
 
 
 
@@ -55,7 +55,7 @@ import Login from '../screens/Login';
                 />
               )
             }
-            if (route.name === 'Login') {
+            if (route.name === 'Listar') {
               return(
                 <Image
                   source={require('../../assets/img/calendar.png')}
@@ -82,8 +82,9 @@ import Login from '../screens/Login';
           // tabBarInactiveTintColor: 'red',
           tabBarStyle: { height: 50 }              
         }) }>
+
             <bottomTab.Screen name="Cadastrar" component={Cadastrar}  />
-            <bottomTab.Screen name="Login" component={Login}  />
+            <bottomTab.Screen name="Listar" component={Listar}  />
             
           </bottomTab.Navigator>
       
