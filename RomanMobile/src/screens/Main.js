@@ -18,6 +18,7 @@ const bottomTab = createBottomTabNavigator();
 
 import Cadastrar from '../screens/Cadastrar';
 import Listar from '../screens/Listar';
+import Perfil from '../screens/Perfil';
 
 
 
@@ -50,7 +51,7 @@ import Listar from '../screens/Listar';
             if (route.name === 'Cadastrar') {
               return(
                 <Image
-                  source={require('../../assets/img/plane.png')}
+                  source={require('../../assets/img/mais.png')}
                   style={styles.tabBarIcon}
                 />
               )
@@ -63,28 +64,29 @@ import Listar from '../screens/Listar';
                 />
               )
             }
-            // if (route.name === 'Perfil') {
-            //   return(
-            //     <Image
-            //       source={require('../../assets/img/profile.png')}
-            //       style={styles.tabBarIcon}
-            //     />
-            //   )
-            // }
+            if (route.name === 'Perfil') {
+              return(
+                <Image
+                  source={require('../../assets/img/profile.png')}
+                  style={styles.tabBarIcon}
+                />
+              )
+             }
           },
 
           // React Navigation 6.x
           headerShown: false,
           tabBarShowLabel: false,
-          tabBarActiveBackgroundColor: '#B727FF',
-          tabBarInactiveBackgroundColor: '#DD99FF',
+          tabBarActiveBackgroundColor: '#B377FF',
+          tabBarInactiveBackgroundColor: '#440793',
           // tabBarActiveTintColor: 'blue',
           // tabBarInactiveTintColor: 'red',
           tabBarStyle: { height: 50 }              
         }) }>
 
-            <bottomTab.Screen name="Cadastrar" component={Cadastrar}  />
             <bottomTab.Screen name="Listar" component={Listar}  />
+            <bottomTab.Screen name="Cadastrar" component={Cadastrar}  />
+            <bottomTab.Screen name="Perfil" component={Perfil}  />
             
           </bottomTab.Navigator>
       

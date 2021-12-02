@@ -30,7 +30,8 @@ namespace desafio_roman_webApi.Contexts
             if (!optionsBuilder.IsConfigured)
             {
                 // optionsBuilder.UseSqlServer("Data Source=DESKTOP-C8POL51\\SQLEXPRESS; initial catalog=ROMAN; user Id=sa; pwd=senai@132;");
-                optionsBuilder.UseSqlServer("Data Source=NOTE0113A5\\SQLEXPRESS; initial catalog=ROMAN; user Id=sa; pwd=Senai@132;");
+                // optionsBuilder.UseSqlServer("Data Source=NOTE0113A5\\SQLEXPRESS; initial catalog=ROMAN; user Id=sa; pwd=Senai@132;");
+                optionsBuilder.UseSqlServer("Data Source=NOTE0113I2\\SQLEXPRESS; initial catalog=ROMAN_R; user Id=sa; pwd=Senai@132;");
             }
         }
 

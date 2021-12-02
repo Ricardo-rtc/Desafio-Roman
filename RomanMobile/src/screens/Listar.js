@@ -16,7 +16,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import api from '../services/api';
 
-export default class Cadastrar extends Component {
+export default class Listar extends Component {
 
     constructor(props) {
         super(props);
@@ -53,57 +53,48 @@ export default class Cadastrar extends Component {
                 <ImageBackground
                     source={require('../../assets/img/background.png')}
                     style={StyleSheet.absoluteFillObject}
-                >
+                />
                     <View style={styles.main}>
                         <Image
                             source={require('../../assets/img/logo.png')}
                             style={styles.mainImgLogin}
                         />
-                        <Text style={styles.listarTitle}>
-                            Listagem
-                        </Text>
-                        <View style={styles.linha}></View>
-                        <View style={styles.mainBodyContent}>
+                        <View style={styles.Container}>
 
-                            <View style={styles.coluna}>
-                                <View style={[styles.coluna1, styles.caixa]}>
-                                    <Text style={[styles.fonte, styles.titulo]}>
-                                        Nome do projeto
-                                    </Text>
-                                </View>
-
-                                <View style={styles.caixa}>
-                                    <Text style={[styles.fonte, styles.titulo]}>
-                                        Tema
-                                    </Text>
-                                </View>
+                            <View style={styles.Box_tiutlo}>
+                                <Text style={styles.Titulo}>
+                                    {'Projetos'.toUpperCase()}
+                                </Text>
                             </View>
 
                             <FlatList
-                                // contentContainerStyle={styles.mainBodyContent}
                                 data={this.state.listaProjetos}
                                 keyExtractor={item => item.idProjeto}
                                 renderItem={this.renderItem}
                             />
                         </View>
                     </View>
-                </ImageBackground>
             </View>
         );
     }
 
     renderItem = ({ item }) => (
-        <View style={styles.coluna}>
-            <View style={[styles.coluna1, styles.caixa]}>
-                <Text style={styles.fonte}>
-                    {item.nomeProjeto}
-                </Text>
-            </View>
+        <View>
+            <View style={styles.ListarDiv}>
+                <View style={styles.Box_Projeto}>
+                    <Text style={styles.ListagemNome}>
+                        {item.nomeProjeto.toUpperCase()}
+                    </Text>
+                </View>
 
-            <View style={styles.caixa}>
-                <Text style={styles.fonte}>
-                    {item.idTemaNavigation.nomeTema}
+                <Text style={styles.ListagemTema}>
+                    {'Tema: ' + item.idTemaNavigation.nomeTema}
                 </Text>
+
+                <Text style={styles.ListagemDescricao}>
+                    {'Descrição: ' + item.escopo}
+                </Text>
+
             </View>
         </View>
     );
@@ -116,36 +107,87 @@ const styles = StyleSheet.create({
         height: 320,
         borderRadius: 20,
         marginTop: 30,
+        marginBottom: 300,
     },
 
-    coluna: {
-        flexDirection: 'row',
-        borderBottomColor: '#FFFFFF',
-        borderBottomWidth: 1,
-    },
-
-    coluna1: {
-        borderRightWidth: 1,
-        borderColor: '#FFFFFF',
-    },
-
-    caixa: {
-        width: '50%',
+    Box_tiutlo: {
         alignItems: 'center',
-        justifyContent: 'center',
+        color: "white"
     },
 
-    fonte: {
-        fontFamily: 'Roboto',
-        fontSize: 18,
-        color: '#FFFFFF',
-        textAlign: 'center',
-        margin: 10,
+    Fundo: {
+        flex: 1,
+        backgroundColor: '#E0EDF5'
     },
 
-    titulo: {
+    Container: {
+        flex: 1,
+        marginLeft: 35,
+        marginRight: 35,
+        marginBottom: 35
+    },
+
+    Titulo: {
+        color: "white",
         fontWeight: 'bold',
+        fontSize: 30,
+        marginTop: 36,
+        borderBottomColor: 'white',
+        borderBottomWidth: 2
     },
+
+    Listagem: {
+        color: "white",
+        borderColor: '#440793',
+        fontWeight: 'bold'
+    },
+
+    Box_Projeto: {
+        alignItems: 'flex-end',
+        // backgroundColor
+        backgroundColor: '#440793'
+    },
+
+    ListagemNome: {
+        color: 'white',
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginRight: 8,
+        margin: 3
+    },
+
+    ListagemTema: {
+        color: "white",
+        fontWeight: 'bold',
+        fontSize: 20,
+        marginLeft: 8,
+        marginTop: 8
+    },
+
+    ListagemDescricao: {
+        color: "white",
+        fontWeight: 'bold',
+        fontSize: 18,
+        marginLeft: 8,
+        marginTop: 18,
+        marginBottom: 10
+    },
+
+    ListagemExemplo: {
+        color: 'black',
+        marginLeft: 10,
+        fontSize: 12,
+        marginBottom: 32
+    },
+
+    ListarDiv: {
+        borderColor: '#440793',
+        borderWidth: 3,
+        borderRadius: 10,
+        marginTop: 20
+        // alignItems: 'flex-end'
+    },
+
 
     overlay: {
         ...StyleSheet.absoluteFillObject,
@@ -166,17 +208,17 @@ const styles = StyleSheet.create({
         marginBottom: 10, // tira espacamento pra cima
     },
 
-    listarTitle: {
-        fontFamily: 'Roboto',
-        fontSize: 48,
-        color: '#FFFFFF'
-    },
+    // listarTitle: {
+    //     fontFamily: 'Roboto',
+    //     fontSize: 48,
+    //     color: '#FFFFFF'
+    // },
 
-    linha: {
-        backgroundColor: '#FFFFFF',
-        width: 300,
-        height: 1,
-        marginTop: 10
-    }
+    // linha: {
+    //     backgroundColor: '#FFFFFF',
+    //     width: 300,
+    //     height: 1,
+    //     marginTop: 10
+    // }
 
 });
