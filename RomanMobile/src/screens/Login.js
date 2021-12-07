@@ -31,8 +31,8 @@ export default class Login extends Component {
     console.warn(this.state.email + ' ' + this.state.senha);
 
     const resposta = await api.post('/login', {
-      email: this.state.email, //ADM@ADM.COM
-      senha: this.state.senha, //senha123
+      email: this.state.email, 
+      senha: this.state.senha, 
     });
 
     //mostrar no swagger para montar.
